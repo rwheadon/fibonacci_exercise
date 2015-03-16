@@ -9,8 +9,8 @@ This example could be expanded to allow user to specify the number of sequence m
 
 The following ruby gems were loaded to run this example on my localhost:
 
-$ gem install sinatra
-$ gem install shotgun
-$ gem install rspec (for a few Fibonacci class tests)
+$ gem install sinatra  
+$ gem install shotgun  
+$ gem install rspec (for a few Fibonacci class tests)  
 
 The username doesn't matter, password is 'fibworld'
