@@ -24,10 +24,11 @@ get '/login' do
 end
 
 get '/logout' do
+ #couldn't get the flash[:error] to delete so clearing logic params for a better login page visit
+ # by clearing session settings on non-auth sessions
   session[:user_in] = nil
   session[:pass_in] = nil
   session[:auth] = false
-  flash[:error]=""
   redirect to "world"
 end
 
@@ -35,7 +36,8 @@ get '/secure' do
   if session[:auth]
     erb :secure, locals: {name: session[:user_in]}
   else
-
+     #couldn't get the flash[:error] to delete so clearing logic params for a better login page visit
+     # by clearing session settings on non-auth sessions
     session[:user_in]=nil
     session[:pass_in]=nil
     redirect to "/login"
@@ -46,7 +48,6 @@ get '/world' do
   if session[:auth]
     redirect to "secure"
   else
-    flash[:error]=""
     erb :world
   end
 end
@@ -130,7 +131,7 @@ __END__
 <html>
 <title>Public Page</title>
 <head>
-  <%= erb :styling %>
+    <%= erb :styling %>
 </head>
   <body>
 
@@ -145,49 +146,7 @@ __END__
 </html>
 
 @@ styling
-<style>
-body {
-  font-family: verdana,tahoma,sans-serif;
-}
-
-h1 {
-  text-align: center;
-}
-
-.loginform {
-  display: block;
-  width: 50%;
-  background: #c0c0c0;
-  margin: auto;
-  padding: 20px;
-}
-
-.container {
-  margin: auto;
-  padding: 10px;
-  width: 50%;
-  background: #c0c0c0;
-}
-
-.centerlink {
-  text-align: center;
-}
-
-.aright {
-  text-align: right;
-  padding: 5px;
-}
-
-.sbut {
-  margin-top: 10px;
-}
-
-.flashcell {
-  height: 50px;
-  text-align: center;
-  vertical-align: top;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/fibapp.css"/>
 
 @@ fib_header
   <h1>Welcome to Fib World!</h1>
