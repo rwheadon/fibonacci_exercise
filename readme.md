@@ -13,4 +13,5 @@ $ gem install sinatra
 $ gem install shotgun  
 $ gem install rspec (for a few Fibonacci class tests)  
 
-The username doesn't matter, password is 'fibworld'
+The username doesn't matter but you must provide *something*,  
+password is **'fibworld'**
