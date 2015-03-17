@@ -4,10 +4,44 @@ body {
 h1 {
   text-align: center;
 }
+
+td {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.logins {
+	line-height: 20px;
+	font-size: 1em;
+}
+
+.liemph {
+	width: 50px;
+	background: #fff;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+}
+
+.lidataemph {
+	width: 800px;
+	background: #fff;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+}
+
+.olemph {
+	font-weight: bold;
+	padding: 5px;
+	background: #fff;
+}
+
 .loginform {
   display: block;
   width: 50%;
-  background: #c0c0c0;
+  background: #E8F0F8;
+  border: 2px #CBDCF0 solid;
+  border-top-right-radius: 40px 20px;
+  border-top-left-radius: 40px 20px;
   margin: auto;
   padding: 20px;
 }
@@ -15,17 +49,21 @@ h1 {
   margin: auto;
   padding: 10px;
   width: 50%;
-  background: #c0c0c0;
+  background: #E8F0F8;
+  border: 2px #CBDCF0 solid;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 .centerlink {
   text-align: center;
 }
 .aright {
   text-align: right;
-  padding: 5px;
+/*  padding: 5px;*/
 }
 .sbut {
-  margin-top: 10px;
+	width: 100px;
+	margin-top: 10px;
 }
 .flashcell {
   height: 50px;

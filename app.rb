@@ -83,14 +83,14 @@ __END__
          </tr>
          <tr>
            <td class="aright">User Name:</td>
-           <td><input type="text" id="username" class="logins" name="post[username]" /></td>
+           <td><input type="text" id="username" class="logins" name="post[username]" autofocus/></td>
         </tr><tr>
           <td class="aright">Password:</td>
           <td><input type="password" id="password" class="logins" name="post[password]" /></td>
         </tr>
       </tbody>
       <tfoot>
-        <tr><td></td><td><input type="submit" class="sbut btn btn-primary"></td></tr>
+        <tr><td></td><td><input type="submit" class="sbut"></td></tr>
       </tfoot>
     </table>
           
@@ -106,6 +106,7 @@ __END__
 <title>Private Page</title>
 <head>
   <%= erb :styling %>
+  <%= erb :scripting %>
 </head>
   <body>
 
@@ -114,8 +115,12 @@ __END__
     <p>
     Thanks for visiting Fib World  <b><%= name %></b><br /><br />
     </p>
-    <p>The First 10 in our fibonacci sequence are:<br />
-      <%= Fibonacci.new.fib(0, 1, 10, []).join(", ") %>
+    <p>
+      The First 100 in our fibonacci sequence are:<table><tbody>
+      <% Fibonacci.new.fib(0, 1, 100, []).each_with_index do | f, idx | %>
+        <%= (idx+1) % 2 == 0 ? "<tr class=\"olemph\"><td class=\"liemph\">#{idx+1}<td class=\"lidataemph\">#{f}</td></tr>" : "<tr><td>#{idx+1}<td>#{f}</td></tr>" %>
+      <% end %>
+    </tbody></table>
     </p>
     
     <p>
@@ -144,6 +149,9 @@ __END__
   </div>
   </body>
 </html>
+
+@@ scripting
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
 @@ styling
 <link rel="stylesheet" type="text/css" href="css/fibapp.css"/>
